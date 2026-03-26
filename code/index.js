@@ -17,7 +17,7 @@ fastify.all("/*", {}, async function (request, reply) {
     .code(200)
     .header("my-custom-header", "hello")
     .send({
-      msg: "Hello, World! ",
+      msg: "Hello, World! " + process.env.TEST_ENV,
       request: {
         query: request.query,
         path: request.url,

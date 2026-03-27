@@ -30,7 +30,11 @@ app.get("/", async () => {
     trpcEndpoint: "/trpc",
     exampleQueries: [
       "/trpc/health",
-      "/trpc/greet?input=%7B%22name%22%3A%22Bun%22%7D"
+      "/trpc/greet?input=%7B%22name%22%3A%22Bun%22%7D",
+      "/trpc/getTestKv?input=%7B%22key%22%3A%22demo%22%7D"
+    ],
+    exampleMutations: [
+      "POST /trpc/setTestKv with body {\"input\":{\"key\":\"demo\",\"value\":\"hello\"}}"
     ]
   };
 });
